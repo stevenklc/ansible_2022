@@ -1,0 +1,41 @@
+- name: Test Ping Host Machline
+  hosts: Test1
+  tasks:
+    - name: Ping my Host
+      ansible.builtin.ping:
+    - name: Print message     
+      ansible.builtin.debug:
+        msg: Test connect OK!
+
+
+    - name: Check Directory
+      stat:
+        path: "{{ item }}"
+      register: dirname
+      ignore_errors: true
+      with_items:
+        - ~/T01/Test
+
+    - name: debug msg
+      debug:
+        msg: Test
+      when: dirname.results[0].stat.exists
+
+    - name: Test Create File Directory
+      ansible.builtin.file:
+        dest: "{{ item }}"
+        state: directory
+      with_items:
+        - ~/T01/Test
+      when: not dirname.results[0].stat.exists
+    - name: Test Delete File Directory
+      file:
+        dest: "{{ item }}"
+        state: absent
+      with_items:
+        - ~/T01/Test
+      when: dirname.results[0].stat.exists
+
+
+
+
