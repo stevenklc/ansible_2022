@@ -1,0 +1,20 @@
+
+
+- name: Debug Var
+  debug:
+    msg: "Hello world"
+
+- name: Update apt
+  become: true
+  become_method: sudo
+  apt:
+    update_cache: yes
+    force_apt_get: yes
+    cache_valid_time: 3600 
+
+- name: Upgrade all packages
+  become: true
+  become_method: sudo
+  apt:
+    upgrade: dist
+    force_apt_get: yes

@@ -1,3 +1,12 @@
+## 新增roles update
+- group_vars: all
+```
+新增一組all, ansible_become_pass: PASSWORD
+記錄update 需要的密碼
+```
+
+
+
 ## 建立目錄、判斷目錄、刪除目錄
 ```
 create_delete_directory.yaml
