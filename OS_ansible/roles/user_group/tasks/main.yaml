@@ -1,0 +1,11 @@
+- name: add Group 
+  group:
+    name: "{{ group_name }}"
+    state: present
+
+- name: add user
+  user:
+    name: Test_user
+    group: "{{ group_name }}"
+    update_password: always
+    password: "{{ user_pass | password_hash('sha512') }}"

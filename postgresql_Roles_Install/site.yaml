@@ -1,6 +1,0 @@
-- hosts: Test1
-
-  roles:
-    #- role: postgresql_install
-    - role: update_apt
-      when: ansible_distribution == "Ubuntu"

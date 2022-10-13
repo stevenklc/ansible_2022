@@ -1,20 +1,36 @@
-## 新增roles update
-- group_vars: all
-```
-新增一組all, ansible_become_pass: PASSWORD
-記錄update 需要的密碼
-```
+# Ansible
+> 建立一些使用上的範例
+
+- .gitignore
+    - host
+    - all
+
+- group_var
+    - 建立group的定義參數all
+    
+- host
+    - inventory
+    - 記錄主機資訊
+
+- site.yaml
+    - ansible啟動任務規劃
+
+## 啟動指令
+    ```shell
+ansible-playbook -i host site.yaml
+    ```
 
 
+## roles
+    - Create_Delete_Directory
+        > 新增刪除修改目錄
+        1. 新增修改目錄
+        2. block分組運用
+        3. copy檔案
 
-## 建立目錄、判斷目錄、刪除目錄
-```
-create_delete_directory.yaml
-```
+    - OS_ansible
+        > 放一些os常用動作
+        1. 新增使用者
+        2. 新增群組
+        3. 修改密碼
 
-## 建立目錄、判斷目錄、block分組運用、copy檔案
-```
-Test1_Create_Cop
-```
-
-## 建立postgresql

@@ -1,0 +1,26 @@
+- hosts: Test1
+  # 多role配置
+  roles:
+    # 更新 apt update 
+    - role: ./OS_ansible/roles/update_apt
+      when: ansible_distribution == "Ubuntu"
+
+    - role: ./OS_ansible/roles/user_group
+      become: true
+      become_method: sudo
+      vars:
+        - group_name: Test123
+
+  # role前執行
+  pre_tasks: 
+  - name: Test PRE
+    debug:
+      msg: Test Pre_tasks
+  
+  post_tasks:
+  - name: Test POST
+    debug: 
+      msg: Test Post_tasks
+
+
+
