@@ -16,9 +16,10 @@
     - ansible啟動任務規劃
 
 ## 啟動指令
-    ```shell
+
+```
 ansible-playbook -i host site.yaml
-    ```
+```
 
 
 ## roles
