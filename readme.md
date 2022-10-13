@@ -23,15 +23,16 @@ ansible-playbook -i host site.yaml
 
 
 ## roles
-    - Create_Delete_Directory
-        > 新增刪除修改目錄 \\  
-        1. 新增修改目錄
-        2. block分組運用
-        3. copy檔案
+- Create_Delete_Directory
+        > 新增刪除修改目錄   
+       
+    1. 新增修改目錄
+    2. block分組運用
+    3. copy檔案
 
-    - OS_ansible
-        > 放一些os常用動作 \\  
-        1. 新增使用者
-        2. 新增群組
-        3. 修改密碼
+- OS_ansible
+        > 放一些os常用動作   
+    1. 新增使用者
+    2. 新增群組
+    3. 修改密碼
 
