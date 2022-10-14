@@ -1,0 +1,12 @@
+- name: Check PID
+  shell:
+    cmd: ps -ef |grep -iw syslog | awk '{ print $2 }'
+  register: PID_name
+
+- name: debug
+  debug:
+    var: PID_name
+
+- name: debug dict
+  debug:
+    msg: "{{ PID_name.stdout_lines }}"

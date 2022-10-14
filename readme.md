@@ -35,4 +35,8 @@ ansible-playbook -i host site.yaml
     1. 新增使用者
     2. 新增群組
     3. 修改密碼
+    4. 查找pid
 
+- CA_update
+        > 預定針對jdk進行憑證更新
+    1. 檢查憑證

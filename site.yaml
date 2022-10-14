@@ -10,7 +10,16 @@
       become_method: sudo
       vars:
         - group_name: Test123
+          #
+          #    - role: ./CA_update/roles/update_CA
+          #      vars:
+          #        - cacerts_addr: $JAVA_HOME/lib/security/cacerts
+          #        - CA_pass: changeit
+          #        - CA_name: Test
 
+
+
+    - role: ./OS_ansible/roles/delete_pid
   # role前執行
   pre_tasks: 
   - name: Test PRE

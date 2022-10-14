@@ -1,0 +1,8 @@
+- name: check JDK CA
+  shell:
+    cmd: keytool -list -keystore "{{ cacerts_addr }}" -storepass "{{ CA_pass }}" -alias "{{ CA_name }}" 
+  register: CA_output
+
+- name: Debug
+  debug:
+    var: CA_output
